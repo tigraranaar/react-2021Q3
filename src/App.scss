@@ -1,7 +1,28 @@
-body {
-  background-color: cadetblue;
+@import "./styles/colors";
 
-  h1 {
-    color: gold;
+body {
+  padding: 0;
+  margin: 0;
+
+  .wrapper {
+    background-color: $GREY;
+
+    .form {
+      margin-bottom: 50px;
+    }
+    .cards {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      .card {
+        margin-bottom: 50px;
+        background-color: $WHITE;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+    }
   }
 }

@@ -1,0 +1,14 @@
+@import "../../styles/colors.scss";
+
+.input {
+  width: 400px;
+  height: 60px;
+  padding-left: 25px;
+  border: 0;
+  border-radius: 3px 0 0 3px;
+  font-size: 15px;
+
+  &:focus {
+    outline: none;
+  }
+}

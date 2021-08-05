@@ -26,8 +26,24 @@
         "extensions": [".js", ".jsx"]
       }
     ],
-    "linebreak-style": 0,
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "linebreak-style": 0,
     "global-require": 0
   }
 }
