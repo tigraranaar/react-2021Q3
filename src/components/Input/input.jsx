@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./input_styles.scss";
+import "./Input.scss";
 
 const Input = ({ placeholder, className }) => (
   <input type="text" placeholder={placeholder} className={className} />
