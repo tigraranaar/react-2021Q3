@@ -1,19 +1,11 @@
-const path = require("path");
 const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   mode: "production",
-  entry: "./index.js",
-  output: {
-    path: path.join(__dirname, "build"),
-    filename: "bundle.js",
-  },
   devtool: "source-map",
   module: {
     rules: [
@@ -27,19 +19,9 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin()],
+  plugins: [new MiniCssExtractPlugin()],
   optimization: {
     minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        extractComments: false,
-      }),
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true,
-      }),
-      new CssMinimizerPlugin(),
-    ],
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
   },
 });

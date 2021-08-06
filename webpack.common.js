@@ -1,6 +1,13 @@
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  entry: "./index.js",
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "bundle.js",
+    clean: true,
+  },
   module: {
     rules: [
       {
@@ -19,19 +26,10 @@ module.exports = {
           },
         },
       },
-      {
-        test: /\.(woff|woff2|eot|otf|ttf)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            outputPath: "fonts",
-          },
-        },
-      },
     ],
   },
   resolve: {
-    extensions: ["", ".js", ".jsx"],
+    extensions: [".js", ".jsx"],
   },
   plugins: [
     new HtmlWebpackPlugin({
