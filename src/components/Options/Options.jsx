@@ -1,10 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
+import getData from "../../services/api";
 import "./Options.scss";
 
-const Options = ({ setSortBy }) => {
+const Options = ({ setArticles, setIsLoading, searchValue, setSortBy }) => {
   const handleChange = (e) => {
     setSortBy(e.target.value);
+
+    setIsLoading(true);
+    getData(searchValue, e.target.value)
+      .then((obj) => {
+        setArticles(obj.data.articles);
+        setIsLoading(false);
+      })
+      .catch((err) => console.log(err)); // eslint-disable-line no-console
   };
 
   return (
@@ -22,6 +31,9 @@ const Options = ({ setSortBy }) => {
 };
 
 Options.propTypes = {
+  setArticles: PropTypes.func.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
+  searchValue: PropTypes.string.isRequired,
   setSortBy: PropTypes.func.isRequired,
 };
 

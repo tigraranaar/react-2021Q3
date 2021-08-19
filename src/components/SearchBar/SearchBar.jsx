@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
+import getData from "../../services/api";
 import "./SearchBar.scss";
 
-const SearchBar = ({ search }) => {
-  const [searchValue, setSearchValue] = useState("");
-
+const SearchBar = ({
+  setArticles,
+  setIsLoading,
+  searchValue,
+  setSearchValue,
+}) => {
   const resetInputField = (e) => {
     e.target.reset();
-    setSearchValue("");
   };
 
   const handleChange = (e) => {
@@ -16,11 +19,16 @@ const SearchBar = ({ search }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!searchValue) return;
 
-    search(searchValue);
-    resetInputField(e);
+    setIsLoading(true);
+    getData(searchValue)
+      .then((obj) => {
+        setArticles(obj.data.articles);
+        setIsLoading(false);
+        resetInputField(e);
+      })
+      .catch((err) => console.log(err)); // eslint-disable-line no-console
   };
 
   return (
@@ -41,7 +49,10 @@ const SearchBar = ({ search }) => {
 };
 
 SearchBar.propTypes = {
-  search: PropTypes.func.isRequired,
+  setArticles: PropTypes.func.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
+  searchValue: PropTypes.string.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
