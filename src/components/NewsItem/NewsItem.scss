@@ -1,0 +1,23 @@
+.newsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 30px 10px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin-top: 40px;
+
+  .newsItem__image {
+    width: 35%;
+    object-fit: contain;
+  }
+
+  .newsItem__textbox {
+    width: 60%;
+
+    .newsItem__description {
+      padding-top: 10px;
+    }
+  }
+}

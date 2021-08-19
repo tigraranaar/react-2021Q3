@@ -1,0 +1,17 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+
+  .spinner__svg {
+    position: relative;
+  }
+
+  .spinner__message {
+    position: absolute;
+    font-family: monospace;
+    font-size: 14px;
+  }
+}
