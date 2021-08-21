@@ -1,0 +1,33 @@
+.activePage {
+  background-color: grey;
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+
+  .pagination__select {
+    margin-left: 10px;
+    width: 60px;
+    height: 30px;
+  }
+
+  .pagination__pages {
+    flex-basis: 100%;
+    margin-top: 30px;
+    li {
+      margin-right: 20px;
+      display: inline-block;
+      list-style: none;
+
+      button {
+        border: 0;
+        // background-color: blue;
+        // color: #fff;
+        padding: 2px;
+        cursor: pointer;
+      }
+    }
+  }
+}

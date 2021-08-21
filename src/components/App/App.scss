@@ -9,9 +9,18 @@ body {
     min-width: 480px;
     padding: 40px;
 
+    .loadingBox {
+      height: 100px;
+      margin-bottom: 30px;
+    }
     .newsList {
       max-width: 700px;
       margin: 0 auto;
+
+      .options {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }

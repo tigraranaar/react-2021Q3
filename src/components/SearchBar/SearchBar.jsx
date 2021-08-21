@@ -36,7 +36,7 @@ const SearchBar = ({
       <form onSubmit={handleSubmit} className="searchBar">
         <input
           type="text"
-          placeholder="Enter your search term"
+          placeholder="Only actual news..."
           className="searchBar__input"
           onChange={handleChange}
         />
