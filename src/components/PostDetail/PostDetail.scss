@@ -1,0 +1,33 @@
+.details {
+  width: 50vw;
+  text-align: center;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #3b3b3b;
+  border-radius: 3px;
+  color: #fff;
+  letter-spacing: 1px;
+  word-spacing: 0.5px;
+  line-height: 25px;
+  font-weight: lighter;
+  font-family: system-ui;
+
+  .details__title {
+    margin-bottom: 30px;
+    a {
+      color: #fff;
+    }
+  }
+
+  .details__image {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .details__description {
+    margin-bottom: 30px;
+  }
+
+  .details__author {
+    margin-bottom: 15px;
+  }
+}

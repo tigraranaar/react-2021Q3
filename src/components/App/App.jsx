@@ -15,7 +15,6 @@ const App = () => {
 
   useEffect(() => {
     if (!searchValue) return;
-
     setIsLoading(true);
     getData(searchValue, sortBy, postsOnPage)
       .then((obj) => {
@@ -58,6 +57,7 @@ const App = () => {
             url={url}
             urlToImage={urlToImage}
             description={description}
+            searchValue={searchValue}
           />
         ))}
       </div>
